@@ -1,0 +1,52 @@
+.table{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{ 
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color:white;
+    font-size: 5rem;
+    margin: 1rem auto
+}
+
+.categoryhead{
+    font-size: 3rem;
+    display: flex;
+    font-weight: 100;
+    flex-direction: column;
+
+}
+h2{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 500;
+    align-items: center;
+    width: 60%;
+    color:blue;
+
+
+}
+li{
+    
+    
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:70%;
+    color:white;
+    margin:0.5rem;
+    font-weight: 300;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+}
+
+
