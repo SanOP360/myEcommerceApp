@@ -1,8 +1,20 @@
+.body{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+
+
+}
+
 form{
     height: auto;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    background-color: rgb(210, 223, 223);
+    margin:2rem auto
 }
 
 label{
@@ -54,4 +66,12 @@ select{
 .AddProducts:hover{
     background-color:rgb(35, 35, 130);
     color:rgb(239, 236, 236);
+}
+
+p{  display: flex;
+    justify-content: center;
+    color:red;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }

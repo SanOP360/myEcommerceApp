@@ -17,17 +17,18 @@ const FormTable = ({ products, onDelete }) => {
     onDelete(productId);
   };
 
+  
   return (
     <div className="table">
       <h1>Products</h1>
 
       {Object.entries(groupedProducts).map(([category, categoryProducts]) => (
-        <div  key={category}>
+        <div key={category}>
           <h2>{category}</h2>
           <ul>
             {categoryProducts.map((product, index) => (
               <li key={index}>
-                {`${product.id} ${product.productName} - ${product.price} `}
+                <span>{`${product.id} - ${product.productName} - ${product.price} `}</span>
                 <DeleteBtn onDelete={() => handleDelete(product.id)} />
               </li>
             ))}

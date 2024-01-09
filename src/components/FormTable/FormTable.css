@@ -43,6 +43,10 @@ li{
     margin:0.5rem;
     font-weight: 300;
 }
+li>span{
+    flex:0.3
+}
+
 
 ul{
     display: flex;

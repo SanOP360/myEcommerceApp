@@ -1,6 +1,7 @@
+// FormInput.js
 import React, { useState, useEffect } from "react";
 import FormTable from "../FormTable/FormTable";
-import './FormInput.css';
+import "./FormInput.css";
 
 const FormInput = () => {
   const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
@@ -11,7 +12,8 @@ const FormInput = () => {
     productName: "",
     category: "",
   });
-  
+  const [error, setError] = useState("");
+
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
   }, [products]);
@@ -29,6 +31,17 @@ const FormInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      !newProduct.id ||
+      !newProduct.price ||
+      !newProduct.productName ||
+      !newProduct.category
+    ) {
+      setError(<p>"Please fill in all fields"</p>);
+      return;
+    }
+
     const updatedProducts = [...products, newProduct];
     setProducts(updatedProducts);
     setNewProduct({
@@ -37,11 +50,14 @@ const FormInput = () => {
       productName: "",
       category: "Electronics",
     });
+    setError(""); // Clear error when successfully adding a product
   };
 
   return (
-    <div>
+    <div className="body">
       <form onSubmit={handleSubmit}>
+        {error && <p className="error">{error}</p>}
+
         <label htmlFor="id">Product ID</label>
         <input
           name="id"
@@ -77,7 +93,9 @@ const FormInput = () => {
           <option value="FoodProduct">Food Product</option>
         </select>
 
-        <button className='AddProducts' type="submit">Add Product</button>
+        <button className="AddProducts" type="submit">
+          Add Product
+        </button>
       </form>
 
       <FormTable products={products} onDelete={handleDelete} />
